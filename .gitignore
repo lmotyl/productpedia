@@ -32,3 +32,4 @@ Homestead.json
 /vendor/
 ###< symfony/framework-bundle ###
 /.idea
+/.idea/*
