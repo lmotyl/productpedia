@@ -64,6 +64,7 @@
             "@auto-scripts"
         ],
         "test": [
+            "@vendory/bin/phpcs --standard=psr2 src",
             "@php bin/console --env=test cache:clear",
             "@php bin/console --env=test doctrine:migrations:migrate --no-interaction",
             "@php bin/console --env=test doctrine:fixtures:load --purge-with-truncate -n",
@@ -88,6 +89,7 @@
         "doctrine/doctrine-fixtures-bundle": "^3.5",
         "estahn/phpunit-json-assertions": "^4.0",
         "phpunit/phpunit": "^9.5",
+        "squizlabs/php_codesniffer": "*",
         "symfony/browser-kit": "6.3.*",
         "symfony/css-selector": "6.3.*",
         "symfony/maker-bundle": "^1.51",
