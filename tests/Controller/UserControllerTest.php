@@ -7,10 +7,6 @@ use Symfony\Component\Routing\RouterInterface;
 
 class UserControllerTest extends WebTestCase
 {
-
-
-
-
     public function testList(): void
     {
         $client = static::createClient();

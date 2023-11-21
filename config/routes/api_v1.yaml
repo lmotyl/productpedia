@@ -2,3 +2,7 @@ api_v1_user_list:
   path:   /api/v1/users
   controller: App\Controller\V1\UserController::list
   methods:  GET|HEAD
+api_v1_dictionary_index:
+  path:   /api/v1/dictionaries
+  controller: App\Controller\V1\DictionaryController::index
+  methods:  GET|HEAD
