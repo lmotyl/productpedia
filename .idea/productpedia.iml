@@ -147,7 +147,11 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/webmozart/assert" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/willdurand/jsonp-callback-validator" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/willdurand/negotiation" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/captainhook/captainhook" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/dama/doctrine-test-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/sebastianfeldmann/camino" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/sebastianfeldmann/cli" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/sebastianfeldmann/git" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

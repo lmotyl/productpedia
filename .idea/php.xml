@@ -120,6 +120,10 @@
       <path value="$PROJECT_DIR$/vendor/justinrainbow/json-schema" />
       <path value="$PROJECT_DIR$/vendor/mtdowling/jmespath.php" />
       <path value="$PROJECT_DIR$/vendor/dama/doctrine-test-bundle" />
+      <path value="$PROJECT_DIR$/vendor/sebastianfeldmann/git" />
+      <path value="$PROJECT_DIR$/vendor/sebastianfeldmann/camino" />
+      <path value="$PROJECT_DIR$/vendor/sebastianfeldmann/cli" />
+      <path value="$PROJECT_DIR$/vendor/captainhook/captainhook" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.1">
