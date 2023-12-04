@@ -6,11 +6,14 @@ use App\Repository\DictionaryRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Serializer\Annotation\Groups;
 use Symfony\Component\Serializer\Annotation\MaxDepth;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: DictionaryRepository::class)]
 #[ORM\Table(name: '`dictionary`')]
+#[UniqueEntity('name')]
 class Dictionary
 {
     #[ORM\Id]
@@ -28,6 +31,11 @@ class Dictionary
 
     #[ORM\Column(length: 255)]
     #[Groups("dictionary")]
+    #[Assert\NotBlank]
+    #[Assert\Length(
+        min: 3,
+        minMessage: "Dictionary name cannot be shorter than {{ limit }} characters long"
+    )]
     private ?string $name = null;
 
     public function __construct()
@@ -94,7 +102,7 @@ class Dictionary
         return $this->name;
     }
 
-    public function setName(string $name): static
+    public function setName(?string $name = null): static
     {
         $this->name = $name;
 
