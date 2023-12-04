@@ -24,7 +24,7 @@ class DictionaryController extends BaseController
 
     }
 
-    #[Route('/api/v1/dictionaries', methods: ['GET'])]
+    #[Route('/api/v1/dictionaries', name: "api_v1_dictionary_index", methods: ['GET'])]
     #[OA\Response(
         response: 200,
         description: 'List of available dictionaries',
