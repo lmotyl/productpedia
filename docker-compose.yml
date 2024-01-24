@@ -6,6 +6,26 @@ services:
   memcached:
     image: 'memcached:alpine'
 
+  redis:
+    image: 'redis:alpine'
+
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+    container_name: "rabbitmq"
+    environment:
+      RABBITMQ_ERLANG_COOKIE: "SWQOKODSQALRPCLNMEQG"
+      RABBITMQ_DEFAULT_USER: "rabbitmq"
+      RABBITMQ_DEFAULT_PASS: "rabbitmq"
+      RABBITMQ_DEFAULT_VHOST: "/"
+    ports:
+      - 5672:5672
+      - 15672:15672
+    volumes:
+      - './phpdocker/rabbitmq/data/:/var/lib/rabbitmq/'
+      - '.~/phpdocker/rabbitmq/log/:/var/log/rabbitmq'
+    networks:
+      - rabbitmq
+
   postgres:
     image: 'postgres:15-alpine'
     working_dir: /application
@@ -36,3 +56,6 @@ services:
     volumes:
       - '.:/application'
       - './phpdocker/php-fpm/php-ini-overrides.ini:/etc/php/8.2/fpm/conf.d/99-overrides.ini'
+networks:
+  rabbitmq:
+    driver: bridge
