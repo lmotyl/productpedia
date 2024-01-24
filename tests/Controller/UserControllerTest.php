@@ -5,11 +5,12 @@ namespace App\Tests\Controller;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use Symfony\Component\Routing\RouterInterface;
 
-class UserControllerTest extends WebTestCase
+class UserControllerTest extends ControllerTest
 {
     public function testList(): void
     {
-        $client = static::createClient();
+        $user = $userRepository->findOneBy([ 'email' => 'admin@admin.com']);
+        $client = $this->createAuthenticateClient($user);
         $container = static::getContainer();
         $router = $container->get('router');
         $client->request('GET', $router->generate('api_v1_user_list'));

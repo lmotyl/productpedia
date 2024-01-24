@@ -2,13 +2,15 @@
 
 namespace App\Tests\Controller;
 
+use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
-class DictionaryControllerTest extends WebTestCase
+class DictionaryControllerTest extends ControllerTest
 {
-    public function testIndex(): void
+    public function testIndex(UserRepository $userRepository): void
     {
-        $client = static::createClient();
+        $user = $userRepository->findOneBy([ 'email' => 'admin@admin.com']);
+        $client = $this->createAuthenticateClient($user);
         $container = static::getContainer();
         $router = $container->get('router');
         $client->request('GET', $router->generate('api_v1_dictionary_index'));

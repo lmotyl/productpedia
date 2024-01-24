@@ -77,7 +77,7 @@
             "@php bin/phpunit tests"
         ],
         "pre-commit": [
-            "@composer run test"
+            "composer run test"
         ]
     },
     "conflict": {
