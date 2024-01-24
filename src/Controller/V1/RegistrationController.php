@@ -15,8 +15,11 @@ use Symfony\Component\Routing\Annotation\Route;
 class RegistrationController extends AbstractController
 {
     #[Route('/register', name: 'register', methods: 'post')]
-    public function index(ManagerRegistry $doctrine, Request $request, UserPasswordHasherInterface $passwordHasher): JsonResponse
-    {
+    public function index(
+        ManagerRegistry $doctrine,
+        Request $request,
+        UserPasswordHasherInterface $passwordHasher
+    ): JsonResponse {
         $em = $doctrine->getManager();
         $decoded = json_decode($request->getContent());
         $email = $decoded->email;

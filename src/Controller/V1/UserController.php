@@ -9,7 +9,6 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class UserController extends AbstractController
 {
-
     public function index(): JsonResponse
     {
         return $this->json([

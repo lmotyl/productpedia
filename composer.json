@@ -69,12 +69,18 @@
         "post-update-cmd": [
             "@auto-scripts"
         ],
+        "phpcs": [
+            "vendor/bin/phpcs src --standard=PSR12 --colors -p"
+        ],
+        "phpcbf": [
+            "vendor/bin/phpcbf src --standard=PSR12 --colors -p"
+        ],
         "test": [
-            "@vendory/bin/phpcs --standard=psr2 src",
-            "@php bin/console --env=test cache:clear",
-            "@php bin/console --env=test doctrine:migrations:migrate --no-interaction",
-            "@php bin/console --env=test doctrine:fixtures:load --purge-with-truncate -n",
-            "@php bin/phpunit tests"
+            "vendor/bin/phpcs src --standard=PSR12 --colors -p",
+            "php bin/console --env=test cache:clear",
+            "php bin/console --env=test doctrine:migrations:migrate --no-interaction",
+            "php bin/console --env=test doctrine:fixtures:load --purge-with-truncate -n",
+            "php bin/phpunit tests"
         ],
         "pre-commit": [
             "composer run test"

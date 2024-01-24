@@ -8,15 +8,16 @@ use Symfony\Component\Validator\ConstraintViolationListInterface;
 
 class BaseController extends AbstractController
 {
-
     public function jsonSuccess($data, array $groups = [])
     {
-        return $this->json([
+        return $this->json(
+            [
                 'data' => $data,
                 'errors' => []
             ],
             Response::HTTP_OK,
-            [], ['groups' => $groups]
+            [],
+            ['groups' => $groups]
         );
     }
     public function jsonValidationError(ConstraintViolationListInterface $errors)
@@ -28,7 +29,8 @@ class BaseController extends AbstractController
             $response[$error->getPropertyPath()] = $error->getMessage();
         }
 
-        return $this->json([
+        return $this->json(
+            [
                 'data' => [],
                 'errors' => $response
             ],

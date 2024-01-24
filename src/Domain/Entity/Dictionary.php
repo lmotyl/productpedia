@@ -46,5 +46,4 @@ class Dictionary extends AbstractEntity
         $this->entries[] = $entry;
         return $this;
     }
-
 }

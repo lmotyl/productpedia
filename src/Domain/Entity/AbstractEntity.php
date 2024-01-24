@@ -16,5 +16,4 @@ abstract class AbstractEntity
         $this->id = $id;
         return $this;
     }
-
 }

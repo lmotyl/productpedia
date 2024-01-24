@@ -12,7 +12,6 @@ class UserFixtures extends Fixture
     public function __construct(
         private UserPasswordHasherInterface $passwordHasher
     ) {
-
     }
 
 
@@ -23,9 +22,5 @@ class UserFixtures extends Fixture
         $user->setPassword($this->passwordHasher->hashPassword($user, 'admin'));
         $manager->persist($user);
         $manager->flush();
-
-
     }
-
-
 }

@@ -80,5 +80,4 @@ class DictionaryEntry extends AbstractEntity
         $this->dictionary = $dictionary;
         return $this;
     }
-
 }
